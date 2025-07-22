@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium quality bedsheets and home products from Khalil Bedsheet in Sheikhupura">
+    <title>Premium Bedsheet - Khalil Bedsheet | Sheikhupura</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #2B2D42;
+            --color-primary-dark: #1A1A2E;
+            --color-secondary: #6C757D;
+            --color-accent: #118AB2;
+            --color-sale: #EF233C;
+            --color-header-footer: #FFFFFF;
+            --color-background: #F7F9FC;
+            --color-card-bg: #FFFFFF;
+            --color-text-main: #2B2D42;
+            --color-text-secondary: #6C757D;
+            --color-link: #118AB2;
+            --color-link-hover: #0A5F7A;
+            --color-border: #E9ECEF;
+            --color-hover: rgba(255, 107, 107, 0.1);
+            --color-shadow: rgba(0, 0, 0, 0.08);
+            --color-button: var(--color-primary);
+            --color-button-hover: var(--color-primary-dark);
+            --color-button-text: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--color-text-main);
+            background: var(--color-background);
+            padding-top: 140px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        .top-header {
+            background: var(--color-header-footer);
+            color: var(--color-text-main);
+            padding: 8px 0;
+            font-size: 14px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .top-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+        }
+
+        .contact-info a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: var(--color-link-hover);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: var(--color-secondary);
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        header {
+            background: var(--color-header-footer);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .main-header {
+            padding: 15px 0;
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 50px;
+            transition: transform 0.3s;
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
+        }
+
+        .logo-text h1 {
+            color: var(--color-primary);
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 3px;
+        }
+
+        .logo-text p {
+            font-size: 13px;
+            color: var(--color-text-secondary);
+            letter-spacing: 0.5px;
+        }
+
+        .category-nav {
+            background: var(--color-primary);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            gap: 5px;
+            padding: 5px 0;
+        }
+
+        .category-nav ul li {
+            margin: 0;
+        }
+
+        .category-nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            padding: 12px 20px;
+            border-radius: 4px;
+            transition: all 0.3s;
+            display: block;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .category-nav ul li a:hover, 
+        .category-nav ul li a.active {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .secondary-nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .secondary-nav a {
+            text-decoration: none;
+            color: var(--color-text-secondary);
+            font-weight: 500;
+            padding: 8px 0;
+            position: relative;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .secondary-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-primary);
+            transition: width 0.3s;
+        }
+
+        .secondary-nav a:hover {
+            color: var(--color-primary);
+        }
+
+        .secondary-nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--color-secondary);
+            transition: color 0.3s;
+        }
+
+        .mobile-menu:hover {
+            color: var(--color-primary);
+        }
+
+        /* Main Content Styles */
+        main {
+            padding-top: 40px;
+            padding-bottom: 60px;
+            background-color: #FFFFFF;
+        }
+
+        .product-container {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .product-image-container {
+            flex: 1;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image {
+            max-width: 100%;
+            max-height: 500px;
+            object-fit: contain;
+            transition: transform 0.3s;
+            width: 100%;
+            height: auto;
+        }
+
+        .zoom-area {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            pointer-events: none;
+            background-repeat: no-repeat;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            display: none;
+            z-index: 10;
+        }
+
+        .product-details {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .product-title {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: var(--color-primary);
+        }
+
+        .product-price {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--color-primary);
+            margin-bottom: 30px;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: var(--color-text-secondary);
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        .product-description {
+            margin-bottom: 30px;
+            line-height: 1.8;
+            color: var(--color-text-main);
+        }
+
+        .whatsapp-button {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .whatsapp-button i {
+            margin-right: 8px;
+        }
+
+        .product-badge {
+            display: inline-block;
+            background: var(--color-sale);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .product-meta {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--color-border);
+            font-size: 14px;
+            color: var(--color-text-secondary);
+        }
+
+        /* Footer Styles */
+        footer {
+            background: var(--color-header-footer);
+            color: var(--color-text-main);
+            padding: 60px 0 20px;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            color: var(--color-primary);
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--color-primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 14px;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-primary);
+            transform: translateX(3px);
+        }
+
+        .footer-links i {
+            width: 20px;
+            margin-right: 8px;
+            color: var(--color-primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--color-border);
+            font-size: 14px;
+            color: var(--color-text-secondary);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 120px;
+            }
+            
+            .top-header .container {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .main-header .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .secondary-nav {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+                background: var(--color-header-footer);
+                padding: 15px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .category-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .product-container {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .category-nav ul li a {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+            
+            .product-title {
+                font-size: 24px;
+            }
+            
+            .product-price {
+                font-size: 20px;
+            }
+            
+            .whatsapp-button {
+                width: 100%;
+                text-align: center;
+                padding: 12px;
+            }
+
+            .zoom-area {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .product-container {
+            animation: fadeIn 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top Header -->
+<div class="top-header">
+    <div class="container">
+        <div class="contact-info">
+            <a href="tel:03464403333"><i class="fas fa-phone"></i> +92 321 8014140</a>
+            <a href="mailto:info@khalilcenter.com"><i class="fas fa-envelope"></i> info@khalilcenter.com</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://facebook.com/khalilbedsheet" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/khalilbedsheet" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/923218014140" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+</div>
+
+<!-- Main Header -->
+<header>
+    <div class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="https://i.postimg.cc/QtKYNy1w/logo1.png" alt="Khalil Bedsheet Logo">
+                <div class="logo-text">
+                    <h1>KHALIL BEDSHEET</h1>
+                    <p>Premium Home Products</p>
+                </div>
+            </a>
+            
+            <div class="secondary-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="products.html">Products</a>
+            </div>
+            
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category Navigation -->
+    <div class="category-nav">
+        <div class="container">
+            <ul>
+                <li><a href="bedding.html" class="active">Bedding</a></li>
+                <li><a href="home-decor.html">Home Decor</a></li>
+                <li><a href="crockery.html">Crockery</a></li>
+                <li><a href="electronics.html">Electronics</a></li>
+                <li><a href="curtains.html">Curtains</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main>
+    <div class="container">
+        <div class="product-container" id="productContainer">
+            <div class="product-image-container">
+                <img src="https://i.postimg.cc/8z0JQy7y/premium-bedsheet.jpg" alt="Premium Quality Bedsheet" class="product-image" id="productImage">
+                <div class="zoom-area"></div>
+            </div>
+            <div class="product-details">
+                <h1 class="product-title" id="productTitle">Premium Cotton Bedsheet Set</h1>
+                <span class="product-badge">BESTSELLER</span>
+                <div class="product-price" id="productPrice">
+                    <span class="original-price">Rs. 4,500</span> Rs. 3,999
+                </div>
+                <p class="product-description" id="productDescription">
+                    Experience ultimate comfort with our premium cotton bedsheet set. Made from 100% high-quality cotton, 
+                    this bedsheet offers exceptional softness and breathability for a perfect night's sleep. 
+                    The set includes one fitted sheet, one flat sheet, and two pillowcases.
+                </p>
+                
+                <button class="whatsapp-button" id="whatsappOrderButton">
+                    <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                </button>
+                
+                <div class="product-meta">
+                    <p><strong>Category:</strong> Bedding > Bedsheets</p>
+                    <p><strong>Availability:</strong> In Stock (25 units)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>KHALIL BEDSHEET</h3>
+                <p>Your trusted source for premium home products in Sheikhupura since 2008. We offer quality products at competitive prices.</p>
+                <div class="social-icons" style="margin-top: 15px;">
+                    <a href="https://facebook.com/khalilbedsheet" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/khalilbedsheet" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/923218014140" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="bedding.html"><i class="fas fa-bed"></i> Bedding</a></li>
+                    <li><a href="home-decor.html"><i class="fas fa-couch"></i> Home Decor</a></li>
+                    <li><a href="electronics.html"><i class="fas fa-plug"></i> Electronics</a></li>
+                    <li><a href="curtains.html"><i class="fas fa-vector-square"></i> Curtains</a></li>
+                    <li><a href="crockery.html"><i class="fas fa-utensils"></i> Crockery</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+                <ul class="footer-links">
+                    <li><a href="shipping.html"><i class="fas fa-truck"></i> Shipping Policy</a></li>
+                    <li><a href="returns.html"><i class="fas fa-exchange-alt"></i> Return Policy</a></li>
+                    <li><a href="privacy.html"><i class="fas fa-lock"></i> Privacy Policy</a></li>
+                    <li><a href="terms.html"><i class="fas fa-file-contract"></i> Terms of Service</a></li>
+                    <li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> Civil Quarters Road, Sheikhupura, Pakistan</li>
+                    <li><i class="fas fa-mobile-alt"></i> +92 321 8014140</li>
+                    <li><i class="fas fa-envelope"></i> info@khalilcenter.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 9:00 PM</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 Khalil Bedsheet. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #EF233C;"></i> in Sheikhupura</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get product ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
+    
+    if (!productId) {
+        window.location.href = 'index.html';
+        return;
+    }
+
+    // Load products from localStorage
+    const products = JSON.parse(localStorage.getItem('bedding_products')) || [];
+    const product = products.find(p => p.id === productId);
+    
+    if (!product) {
+        window.location.href = 'index.html';
+        return;
+    }
+
+    // Update the page with product details
+    document.getElementById('productTitle').textContent = product.title;
+    
+    // Format price display
+    const priceDisplay = product.badge === 'Sale' ? 
+        `<span class="original-price">Rs. ${Math.round(product.price * 1.2)}</span> Rs. ${product.price}` : 
+        `Rs. ${product.price}`;
+    document.getElementById('productPrice').innerHTML = priceDisplay;
+    
+    document.getElementById('productDescription').textContent = product.description;
+    const productImage = document.getElementById('productImage');
+    productImage.src = product.image;
+    productImage.alt = product.title;
+    
+    // Update badge if exists
+    const badgeElement = document.querySelector('.product-badge');
+    if (product.badge && badgeElement) {
+        badgeElement.textContent = product.badge;
+        badgeElement.style.display = 'inline-block';
+        
+        // Style different badges differently
+        if (product.badge === 'Sale') {
+            badgeElement.style.backgroundColor = '#EF233C';
+        } else if (product.badge === 'New') {
+            badgeElement.style.backgroundColor = '#118AB2';
+        } else if (product.badge === 'Bestseller') {
+            badgeElement.style.backgroundColor = '#06D6A0';
+        }
+    } else if (badgeElement) {
+        badgeElement.style.display = 'none';
+    }
+    
+    // Update stock information with color coding
+    const stockElement = document.querySelector('.product-meta p:nth-child(2)');
+    if (stockElement) {
+        const availabilityText = product.stock > 0 ? 
+            `In Stock (${product.stock} units)` : 'Out of Stock';
+        const availabilityClass = product.stock > 0 ? 'in-stock' : 'out-of-stock';
+        stockElement.innerHTML = `<strong>Availability:</strong> <span class="${availabilityClass}">${availabilityText}</span>`;
+    }
+
+    // Enhanced WhatsApp Order Button with all details
+    document.getElementById('whatsappOrderButton').addEventListener('click', function() {
+        // Create comprehensive message with product details
+        const message = `*Assalam-o-Alaikum!*\n\n` +
+                        `*🛍️ Order Request - khalil bedsheet parda and crockery center*\n\n` +
+                        `*Product Details:*\n` +
+                        `🔹 *Name:* ${product.title}\n` +
+                        `🔹 *Price:* Rs. ${product.price}\n` +
+                        `🔹 *Description:* ${product.description}\n\n` +
+                        `*Image Reference:* ${product.image}\n\n` +
+                        `Please confirm:\n` +
+                        `✅ Availability\n` +
+                        `✅ Payment method\n` +
+                        `✅ Delivery options\n\n` +
+                        `*JazakAllah Khair for your assistance!*`;
+        
+        // Encode the message for URL
+        const encodedMessage = encodeURIComponent(message);
+        
+        // Create WhatsApp URL with message
+        const whatsappUrl = `https://wa.me/923218014140?text=${encodedMessage}`;
+        
+        // Open WhatsApp in a new tab
+        window.open(whatsappUrl, '_blank');
+    });
+
+    // Magnifying glass effect for product image
+    const productImageContainer = document.querySelector('.product-image-container');
+    const zoomArea = document.querySelector('.zoom-area');
+    const zoomLevel = 2; // Adjust this value to control zoom level
+    
+    productImageContainer.addEventListener('mousemove', function(e) {
+        const containerRect = this.getBoundingClientRect();
+        const x = e.clientX - containerRect.left;
+        const y = e.clientY - containerRect.top;
+        
+        // Calculate percentage positions
+        const xPercent = (x / containerRect.width) * 100;
+        const yPercent = (y / containerRect.height) * 100;
+        
+        // Position the zoom area
+        zoomArea.style.left = (x - 75) + 'px';
+        zoomArea.style.top = (y - 75) + 'px';
+        zoomArea.style.display = 'block';
+        
+        // Set the zoomed background
+        zoomArea.style.backgroundImage = `url('${productImage.src}')`;
+        zoomArea.style.backgroundSize = `${containerRect.width * zoomLevel}px ${containerRect.height * zoomLevel}px`;
+        zoomArea.style.backgroundPosition = `${xPercent}% ${yPercent}%`;
+    });
+    
+    productImageContainer.addEventListener('mouseleave', function() {
+        zoomArea.style.display = 'none';
+    });
+
+    // Mobile menu toggle functionality
+    const mobileMenuButton = document.querySelector('.mobile-menu');
+    const secondaryNav = document.querySelector('.secondary-nav');
+    
+    if (mobileMenuButton && secondaryNav) {
+        mobileMenuButton.addEventListener('click', function() {
+            secondaryNav.style.display = secondaryNav.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.secondary-nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    secondaryNav.style.display = 'none';
+                }
+            });
+        });
+    }
+
+    // Highlight current category in navigation
+    const currentPage = window.location.pathname.split('/').pop();
+    document.querySelectorAll('.category-nav a').forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+
+    // Responsive adjustments
+    function handleResize() {
+        if (secondaryNav) {
+            if (window.innerWidth > 768) {
+                secondaryNav.style.display = 'flex';
+            } else {
+                secondaryNav.style.display = 'none';
+            }
+        }
+    }
+
+    // Initial check
+    handleResize();
+    
+    // Add resize listener
+    window.addEventListener('resize', handleResize);
+});
+</script>
+</body>
+</html>
