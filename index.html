@@ -1,0 +1,2454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khalil Bedsheet - Premium Home Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+/* Global Styles */
+:root {
+    /* Primary Color Scheme - Modern Coral */
+    --color-primary:       Black;     /* Vibrant coral (brand color) */
+    --color-primary-dark:  Black;     /* Darker coral for hover */
+    --color-secondary:     black;    /* Teal for secondary elements */
+    --color-accent:        black;     /* Golden yellow accents */
+    --color-sale:          Black;     /* Pinkish-red for sale tags */
+
+    /* Background Colors - Light & Airy */
+    --color-header-footer: #FFFFFF;     /* Pure white */
+    --color-background:    #F7F9FC;     /* Very light blue-gray */
+    --color-card-bg:       #FFFFFF;     /* White cards */
+
+    /* Text Colors - High Contrast */
+    --color-text-main:     #2B2D42;     /* Dark navy for text */
+    --color-text-secondary:#6C757D;     /* Standard gray */
+    --color-link:          #118AB2;     /* Ocean blue links */
+    --color-link-hover:    #0A5F7A;     /* Darker blue hover */
+
+    /* UI Colors */
+    --color-border:        #E9ECEF;     /* Light gray borders */
+    --color-hover:        rgba(255, 107, 107, 0.1); /* Coral hover tint */
+    --color-shadow:       rgba(0, 0, 0, 0.08);      /* Softer shadows */
+
+    /* Button Colors */
+    --color-button:        var(--color-primary);
+    --color-button-hover:  var(--color-primary-dark);
+    --color-button-text:   #FFFFFF;     /* White button text */
+
+    /* Semantic Aliases */
+    --button-bg:          var(--color-button);
+    --button-text:        var(--color-button-text);
+    --hover:              var(--color-primary-dark);
+    --light:              var(--color-background);
+    --text-main:          var(--color-text-main);
+    --text-secondary:     var(--color-text-secondary);
+    --background:         var(--color-background);
+    --card-bg:            var(--color-card-bg);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--color-text-main);
+    background: var(--color-background);
+    padding-top: 140px; /* Added for fixed header */
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--color-button);
+    color: var(--color-button-text);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-button-hover);
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease-out;
+}
+
+.btn:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.btn:hover {
+    background: var(--color-button-hover);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+.btn-outline:hover {
+    background: var(--color-primary);
+    color: var(--color-button-text);
+    border-color: var(--color-primary);
+}
+
+/* Header Styles */
+header {
+    background: var(--color-header-footer);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+header.hide {
+    transform: translateY(-100%);
+}
+
+.top-header {
+    background: var(--color-header-footer);
+    color: var(--color-text-main);
+    padding: 8px 0;
+    font-size: 14px;
+    border-bottom: 1px solid var(--color-border);
+    animation: fadeInDown 0.5s ease-out;
+}
+
+.top-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-info a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s;
+}
+
+.contact-info a:hover {
+    color: var(--color-link-hover);
+    transform: translateX(3px);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: var(--color-secondary);
+    font-size: 16px;
+    transition: all 0.3s;
+    transform: translateZ(0);
+}
+
+.social-icons a:hover {
+    color: var(--color-primary);
+    transform: translateY(-3px) scale(1.2);
+}
+
+.main-header {
+    padding: 15px 0;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.logo img {
+    height: 50px;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.logo:hover {
+    transform: scale(1.03);
+}
+
+.logo:hover img {
+    transform: rotate(10deg) scale(1.1);
+}
+
+.logo-text h1 {
+    color: var(--color-primary);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 3px;
+    transition: all 0.3s;
+}
+
+.logo:hover .logo-text h1 {
+    text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo-text p {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    letter-spacing: 0.5px;
+}
+
+/* Main Navigation */
+.category-nav {
+    background: var(--color-primary);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: slideInDown 0.6s ease-out;
+}
+
+.category-nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 5px;
+    padding: 5px 0;
+}
+
+.category-nav ul li {
+    margin: 0;
+    position: relative;
+}
+
+.category-nav ul li::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: white;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.category-nav ul li:hover::after {
+    width: 70%;
+}
+
+.category-nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: 4px;
+    transition: all 0.3s;
+    display: block;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+
+.category-nav ul li a:hover, 
+.category-nav ul li a.active {
+    background: var(--color-primary-dark);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Secondary Navigation */
+.secondary-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.secondary-nav a {
+    text-decoration: none;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    padding: 8px 0;
+    position: relative;
+    font-size: 15px;
+    transition: all 0.3s;
+}
+
+.secondary-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width 0.3s;
+}
+
+.secondary-nav a:hover {
+    color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+.secondary-nav a:hover::after {
+    width: 100%;
+}
+
+.secondary-nav #sellerLoginBtn {
+    background: var(--color-accent);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.secondary-nav #sellerLoginBtn:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.secondary-nav #sellerLoginBtn::after {
+    display: none;
+}
+
+/* Cart Icon Styles */
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+    color: black; /* Make the icon black */
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: black; /* Make the count badge black to match */
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.cart-icon:hover .cart-count {
+    background: var(--color-primary-dark);
+    transform: scale(1);
+}
+
+/* Cart Dropdown Styles */
+.cart-dropdown {
+    position: fixed;
+    top: 140px;
+    right: -400px;
+    width: 350px;
+    height: calc(100vh - 140px);
+    background: white;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    z-index: 999;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-dropdown.active {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.cart-header h3 {
+    font-size: 20px;
+    color: var(--color-text-main);
+}
+
+.close-cart {
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: var(--color-text-secondary);
+}
+
+.close-cart:hover {
+    color: var(--color-primary);
+    transform: rotate(90deg);
+}
+
+.cart-items {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.cart-item-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.cart-item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s;
+}
+
+.cart-item:hover .cart-item-img img {
+    transform: scale(1.05);
+}
+
+.cart-item-details {
+    flex: 1;
+}
+
+.cart-item-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: var(--color-text-main);
+}
+
+.cart-item-price {
+    font-size: 14px;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-btn {
+    width: 25px;
+    height: 25px;
+    border: 1px solid var(--color-border);
+    background: none;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.quantity-btn:hover {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+.quantity {
+    font-size: 14px;
+    min-width: 20px;
+    text-align: center;
+}
+
+.remove-item {
+    color: var(--color-text-secondary);
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.remove-item:hover {
+    color: var(--color-primary);
+    transform: translateX(3px);
+}
+
+.cart-total {
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-text-main);
+}
+
+.cart-actions {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cart-empty {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--color-text-secondary);
+}
+
+.cart-empty i {
+    font-size: 50px;
+    margin-bottom: 15px;
+    color: var(--color-border);
+}
+
+/* Notification */
+.cart-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--color-primary);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-notification.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.mobile-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--color-secondary);
+    transition: all 0.3s;
+}
+
+.mobile-menu:hover {
+    color: var(--color-primary);
+    transform: rotate(90deg);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(255,255,255,0.2)), url('https://i.postimg.cc/Tw4VjSkZ/banner.png');    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--color-text-main);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.3s forwards;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    animation: textGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 5px rgba(255,255,255,0.3);
+    }
+    100% {
+        text-shadow: 0 0 15px rgba(255,255,255,0.6), 0 0 20px rgba(255,255,255,0.4);
+    }
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.6s forwards;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.9s forwards;
+}
+
+/* Products Section */
+.products {
+    padding: 80px 0;
+    background: var(--color-background);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.section-header h2 {
+    font-size: 36px;
+    color: var(--color-text-main);
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--color-primary);
+    transition: all 0.5s ease;
+}
+
+.section-header:hover h2::after {
+    width: 120px;
+    background: var(--color-secondary);
+}
+
+.section-header p {
+    color: var(--color-text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.product-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.category {
+    background: var(--color-card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid var(--color-border);
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+}
+
+.category.animate {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.category:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-color: var(--color-primary);
+}
+
+.category-img {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.category-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.category:hover .category-img::before {
+    opacity: 1;
+}
+
+.category-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.category:hover .category-img img {
+    transform: scale(1.1) rotate(1deg);
+}
+
+.category-info {
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.category-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--color-text-main);
+    transition: all 0.3s;
+}
+
+.category:hover .category-info h3 {
+    color: var(--color-primary);
+}
+
+.category-info p {
+    color: var(--color-text-secondary);
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+/* Sale Badge */
+.sale-badge {
+    background: var(--color-sale);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 3;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* About Section */
+.about {
+    padding: 80px 0;
+    background: var(--color-card-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    opacity: 0.1;
+    animation: float 15s infinite ease-in-out;
+}
+
+.about::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: var(--color-secondary);
+    border-radius: 50%;
+    opacity: 0.1;
+    animation: float 20s infinite ease-in-out reverse;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-50px) rotate(5deg);
+    }
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.about-img {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: perspective(1000px) rotateY(-15deg);
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.about-img.animate {
+    animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.about-img:hover {
+    transform: perspective(1000px) rotateY(0deg);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+}
+
+.about-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: all 0.5s ease;
+}
+
+.about-img:hover img {
+    transform: scale(1.03);
+}
+
+.about-text {
+    transform: translateX(50px);
+    opacity: 0;
+}
+
+.about-text.animate {
+    animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.about-text h2 {
+    font-size: 36px;
+    color: var(--color-text-main);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.about-text h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: var(--color-primary);
+    transition: all 0.5s ease;
+}
+
+.about-text:hover h2::after {
+    width: 120px;
+    background: var(--color-secondary);
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+}
+
+.about-features {
+    margin-top: 30px;
+}
+
+.feature {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    transform: translateX(-20px);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.feature.animate {
+    animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.feature:nth-child(1) { animation-delay: 0.2s; }
+.feature:nth-child(2) { animation-delay: 0.4s; }
+.feature:nth-child(3) { animation-delay: 0.6s; }
+
+.feature-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    flex-shrink: 0;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.feature:hover .feature-icon {
+    transform: rotate(15deg) scale(1.1);
+    background: var(--color-secondary);
+}
+
+.feature-text h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: var(--color-text-main);
+    transition: all 0.3s;
+}
+
+.feature:hover .feature-text h4 {
+    color: var(--color-primary);
+}
+
+.feature-text p {
+    color: var(--color-text-secondary);
+}
+
+/* Contact Section */
+.contact {
+    padding: 80px 0;
+    background: var(--color-background);
+    position: relative;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://i.postimg.cc/s2NWhknf/banner2.jpg') center/cover fixed;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.contact-info.animate {
+    animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.contact-card {
+    display: flex;
+    gap: 15px;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background: rgba(255,255,255,0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.contact-card:hover {
+    transform: translateX(10px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    background: white;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+    transform: rotate(15deg) scale(1.1);
+    background: var(--color-secondary);
+}
+
+.contact-text h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: var(--color-text-main);
+}
+
+.contact-text p, .contact-text a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.contact-text a:hover {
+    color: var(--color-primary);
+    transform: translateX(3px);
+}
+
+.contact-form {
+    background: var(--color-card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 1px solid var(--color-border);
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.contact-form.animate {
+    animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.contact-form:hover {
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    font-family: inherit;
+    transition: all 0.3s;
+    background: white;
+    color: var(--color-text-main);
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.2);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* WhatsApp Button Section */
+.whatsapp-section {
+    text-align: center;
+    margin-top: 40px;
+    grid-column: 1 / -1;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.whatsapp-section.animate {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.whatsapp-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    background: #25D366;
+    color: white;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-btn i {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.whatsapp-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+    transform: translateX(-100%) skewX(-20deg);
+    transition: transform 0.5s ease;
+}
+
+.whatsapp-btn:hover::after {
+    transform: translateX(100%) skewX(-20deg);
+}
+
+/* Footer */
+footer {
+    background: var(--color-header-footer);
+    color: var(--color-text-main);
+    padding: 60px 0 20px;
+    border-top: 1px solid var(--color-border);
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    opacity: 0.05;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-column {
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.footer-column.animate {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.footer-column:nth-child(1) { animation-delay: 0.1s; }
+.footer-column:nth-child(2) { animation-delay: 0.2s; }
+.footer-column:nth-child(3) { animation-delay: 0.3s; }
+.footer-column:nth-child(4) { animation-delay: 0.4s; }
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+    color: var(--color-text-main);
+}
+
+.footer-column h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--color-primary);
+    transition: all 0.5s ease;
+}
+
+.footer-column:hover h3::after {
+    width: 80px;
+    background: var(--color-secondary);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+    transform: translateX(-10px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.footer-column.animate .footer-links li {
+    animation: fadeInLeft 0.5s ease-out forwards;
+}
+
+.footer-column:nth-child(1) .footer-links li { animation-delay: 0.3s; }
+.footer-column:nth-child(2) .footer-links li { animation-delay: 0.4s; }
+.footer-column:nth-child(3) .footer-links li { animation-delay: 0.5s; }
+.footer-column:nth-child(4) .footer-links li { animation-delay: 0.6s; }
+
+.footer-links a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 14px;
+    display: inline-block;
+    position: relative;
+}
+
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--color-primary);
+    transition: width 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--color-primary);
+    transform: translateX(5px);
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border);
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    position: relative;
+    z-index: 1;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.footer-bottom.animate {
+    animation: fadeIn 0.8s ease-out 0.5s forwards;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transform: scale(0.5);
+}
+
+.back-to-top:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 5px 20px rgba(33, 136, 56, 0.3);
+}
+
+.back-to-top.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+/* Custom Animations */
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Parallax Effect */
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-img {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 120px; /* Adjusted for mobile header height */
+    }
+    
+    .top-header .container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .main-header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .secondary-nav {
+        display: none;
+    }
+    
+    .mobile-menu {
+        display: block;
+    }
+    
+    .category-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero {
+        height: auto;
+        padding: 60px 0;
+    }
+    
+    .hero h2 {
+        font-size: 36px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    /* Cart dropdown responsive */
+    .cart-dropdown {
+        width: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        padding-top: 110px; /* Further adjusted for smaller devices */
+    }
+    
+    .product-categories {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero h2 {
+        font-size: 28px;
+    }
+    
+    .section-header h2 {
+        font-size: 28px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-img {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+
+    /* Cart dropdown responsive */
+    .cart-dropdown {
+        width: 100%;
+        right: -100%;
+    }
+
+    .cart-dropdown.active {
+        right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero h2 {
+        font-size: 24px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+    }
+    
+    .category-nav ul li a {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
+</style>
+</head>
+<body>
+    <!-- Top Header Bar -->
+    <div class="top-header">
+        <div class="container">
+            <div class="contact-info">
+                <a href="tel:03464403333"><i class="fas fa-phone"></i> +92 321 8014140</a>
+                <a href="mailto:info@khalilcenter.com"><i class="fas fa-envelope"></i> info@khalilcenter.com</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header>
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <img src="https://i.postimg.cc/QtKYNy1w/logo1.png" alt="Khalil Center Logo">
+                    <div class="logo-text">
+                        <h1>KHALIL BEDSHEET</h1>
+                        <p>Premium Home Products</p>
+                    </div>
+                </div>
+                
+                <div class="secondary-nav">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#bedding">Products</a>
+                    <div class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                </div>
+                
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category Navigation -->
+        <div class="category-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="#bedding" class="active">Bedding</a></li>
+                    <li><a href="#home-decor">Home Decor</a></li>
+                    <li><a href="#crockery">Crockery</a></li>
+                    <li><a href="#electronics">Electronics</a></li>
+                    <li><a href="#parda">Curtains</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cart Dropdown -->
+    <div class="cart-dropdown">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <div class="close-cart">&times;</div>
+        </div>
+        <div class="cart-items">
+            <div class="cart-empty">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-total">
+            <span>Total:</span>
+            <span class="total-price">Rs 0</span>
+        </div>
+        <div class="cart-actions">
+            <button class="btn" style="width: 100%;">Checkout</button>
+            <button class="btn btn-outline" style="width: 100%;">Continue Shopping</button>
+        </div>
+    </div>
+
+    <!-- Cart Notification -->
+    <div class="cart-notification">
+        <i class="fas fa-check-circle"></i>
+        <span>Item added to cart!</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero parallax">
+        <div class="container">
+            <div class="hero-content">
+                <h2 style="color: white;">Khalil the name of Quality…</h2>
+                <p style="color: black;">Discover our exquisite collection of bedding, home decor, crockery, electronics, and curtains that transform your house into a home.</p>
+                <div class="hero-buttons">
+                    <a href="#bedding" class="btn">Shop Now</a>
+                    <a href="#contact" class="btn btn-outline">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bedding Section -->
+    <section id="bedding" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Bedding Collection</h2>
+                <p>Discover our luxurious range of bedding products for ultimate comfort and style.</p>
+            </div>
+            
+            <div class="product-categories">
+                <div class="category">
+                    <div class="category-img">
+                        <img src="https://i.postimg.cc/VN3sjWqK/bedsheet2.png" alt="Bed Sheets">
+                    </div>
+                    <div class="category-info">
+                        <h3>Bed Sheets</h3>
+                        <p>Premium quality cotton and linen bed sheets in various designs</p>
+                        <a href="bedding-products.html" class="btn">View Collection</a>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <div class="category-img">
+                        <img src="https://i.postimg.cc/BvPw1TQZ/bedsheet.png" alt="Comforters">
+                    </div>
+                    <div class="category-info">
+                        <h3>Comforters</h3>
+                        <p>Warm and cozy comforters for all seasons</p>
+                        <a href="bedding-products.html" class="btn">View Collection</a>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <div class="category-img">
+                        <img src="https://i.postimg.cc/fLwmhsF4/pillows.png" alt="Pillows">
+                    </div>
+                    <div class="category-info">
+                        <h3>Pillows</h3>
+                        <p>Orthopedic and memory foam pillows for better sleep</p>
+                        <a href="bedding-products.html" class="btn">View Collection</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Home Decor Section -->
+    <section id="home-decor" class="products" style="background: var(--light);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Home Decor Collection</h2>
+                <p>Enhance your living space with our beautiful home decor items.</p>
+            </div>
+            
+            <div class="product-categories">
+                <div class="category">
+                    <div class="category-img">
+                        <img src="https://i.postimg.cc/gcx1KsL9/wall-index.jpg" alt="Wall Art">
+                    </div>
+                    <div class="category-info">
+                        <h3>Wall Art</h3>
+                        <p>Elegant paintings and wall decorations</p>
+                        <a href="decor-products.html" class="btn">View Collection</a>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <div class="category-img">
+                        <img src="https://i.postimg.cc/Xq7S2MZK/vase-index.jpg" alt="Vases">
+                    </div>
+                    <div class="category-info">
+                        <h3>Vases & Showpieces</h3>
+                        <p>Decorative vases and showpieces for your home</p>
+                        <a href="customer-home-decor.html" class="btn">View Collection</a>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <div class="category-img">
+                        <img src="https://i.postimg.cc/x87xLBL1/mirror-index.jpg" alt="Mirrors">
+                    </div>
+                    <div class="category-info">
+                        <h3>Mirrors</h3>
+                        <p>Stylish mirrors in various shapes and sizes</p>
+                        <a href="customer-home-decor.html" class="btn">View Collection</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Electronics Section -->
+    <section id="electronics" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Electronics Collection</h2>
+                <p>Modern appliances and gadgets for your smart home.</p>
+            </div>
+            
+            <div class="product-categories">
+                <div class="category">
+                    <div class="category-img">
+                        <img src="https://i.postimg.cc/vH9sMyyH/kitchen-appliances.jpg" alt="Kitchen Appliances">
+                    </div>
+                    <div class="category-info">
+                        <h3>Kitchen Appliances</h3>
+                        <p>Blenders, toasters, and other kitchen essentials</p>
+                        <a href="electronics-products.html" class="btn">View Collection</a>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <div class="category-img">
+                        <img src="https://i.postimg.cc/XvMJkLgQ/home-entertainment.jpg">
+                    </div>
+                    <div class="category-info">
+                        <h3>Home Entertainment</h3>
+                        <p>TVs, speakers, and audio systems</p>
+                        <a href="electronics-products.html" class="btn">View Collection</a>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <div class="category-img">
+                        <img src="https://i.postimg.cc/q7hpS31g/lighting-solutions.jpg" alt="Lighting">
+                    </div>
+                    <div class="category-info">
+                        <h3>Lighting Solutions</h3>
+                        <p>LED lights, lamps, and smart lighting</p>
+                        <a href="electronics-products.html" class="btn">View Collection</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curtains Section -->
+    <section id="parda" class="products" style="background: var(--light);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Curtains Collection</h2>
+                <p>Stylish window treatments to complete your home decor.</p>
+            </div>
+            
+            <div class="product-categories">
+                <div class="category">
+                    <div class="category-img">
+                        <img src="https://i.postimg.cc/FszCy5Gg/sheer-curtains.jpg" alt="Sheer Curtains">
+                    </div>
+                    <div class="category-info">
+                        <h3>Sheer Curtains</h3>
+                        <p>Light and airy curtains for elegant window dressing</p>
+                        <a href="curtain-products.html" class="btn">View Collection</a>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <div class="category-img">
+                        <img src="https://i.postimg.cc/DZ60KYW5/blackout.jpg" alt="Blackout Curtains">
+                    </div>
+                    <div class="category-info">
+                        <h3>Blackout Curtains</h3>
+                        <p>Perfect for light control and privacy</p>
+                        <a href="curtain-products.html" class="btn">View Collection</a>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <div class="category-img">
+                        <img src="https://i.postimg.cc/90wC8W93/decorative.jpg" alt="Decorative Curtains">
+                    </div>
+                    <div class="category-info">
+                        <h3>Decorative Curtains</h3>
+                        <p>Patterned and textured curtains for style</p>
+                        <a href="curtain-products.html" class="btn">View Collection</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crockery Section -->
+    <section id="crockery" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Crockery Collection</h2>
+                <p>Elegant dinnerware sets for your dining table.</p>
+            </div>
+            
+            <div class="product-categories">
+                <div class="category">
+                    <div class="category-img">
+                        <img src="https://i.postimg.cc/zB2b9XP0/dinner-set.jpg" alt="Dinner Sets">
+                    </div>
+                    <div class="category-info">
+                        <h3>Dinner Sets</h3>
+                        <p>Complete dinnerware sets for 4-12 people</p>
+                        <a href="crockery-products.html" class="btn">View Collection</a>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <div class="category-img">
+                        <img src="https://i.postimg.cc/6p2dNSsB/teaset.jpg" alt="Tea Sets">
+                    </div>
+                    <div class="category-info">
+                        <h3>Tea & Coffee Sets</h3>
+                        <p>Beautiful tea cups and coffee mugs</p>
+                        <a href="crockery-products.html" class="btn">View Collection</a>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <div class="category-img">
+                        <img src="https://i.postimg.cc/ydQqcWLh/glassware.jpg" alt="Glassware">
+                    </div>
+                    <div class="category-info">
+                        <h3>Glassware</h3>
+                        <p>Drinking glasses and crystal ware</p>
+                        <a href="crockery-products.html" class="btn">View Collection</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Khalil Bedsheet</h2>
+                    <p>For over 15 years, Khalil Bedsheet has been the premier destination for quality home products in Sheikhupura. Our commitment to excellence and customer satisfaction has made us a trusted name in home furnishings.</p>
+                    <p>We carefully curate our collections to bring you the finest bedding, home decor, crockery, electronics, and curtains that combine style, comfort, and durability.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Quality Assurance</h4>
+                                <p>All our products undergo strict quality checks</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Free Delivery</h4>
+                                <p>On all orders within Sheikhupura</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Customer Support</h4>
+                                <p>Dedicated team to assist you 24/7</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Our Store">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Have questions or need assistance? Message us directly on WhatsApp.</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Our Location</h4>
+                            <p>Civil Quarters Road, Jinnah Park, Sheikhupura</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Call Us</h4>
+                            <p><a href="tel:03464403333">0346-4403333</a></p>
+                            <p><a href="tel:03054403333">0305-4403333</a></p>
+                            <p><a href="tel:03218014140">0321-8014140</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email Us</h4>
+                            <p><a href="mailto:info@khalilcenter.com">info@khalilbedsheet.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Opening Hours</h4>
+                            <p>Monday - Saturday: 9:00 AM - 9:00 PM</p>
+                            <p>Sunday: 11:00 AM - 8:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- WhatsApp Button Section -->
+                <div class="whatsapp-section">
+                    <a href="https://wa.me/923218014140" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> 
+                        Chat on WhatsApp
+                    </a>
+                    <p style="margin-top: 20px; color: var(--color-text-secondary);">
+                        Click the button above to message us directly on WhatsApp
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>KHALIL BEDSHEET</h3>
+                    <p>Your trusted source for premium home products in Sheikhupura since 2008.</p>
+                    <div class="social-icons" style="margin-top: 15px;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#bedding">Bedding</a></li>
+                        <li><a href="#home-decor">Home Decor</a></li>
+                        <li><a href="#electronics">Electronics</a></li>
+                        <li><a href="#parda">Curtains</a></li>
+                        <li><a href="#crockery">Crockery</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#bedding">Bedding</a></li>
+                        <li><a href="#home-decor">Home Decor</a></li>
+                        <li><a href="#crockery">Crockery</a></li>
+                        <li><a href="#electronics">Electronics</a></li>
+                        <li><a href="#parda">Curtains</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Civil Quarters Road, Sheikhupura</li>
+                        <li><i class="fas fa-phone"></i> 0346-4403333</li>
+                        <li><i class="fas fa-envelope"></i> info@khalilbedsheet.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Khalil Bedsheet. Official</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+<script src="cart.js"></script>
+<script>
+    // Cart API functions
+    const CART_API_URL = 'http://localhost:5000/api/cart';
+
+    async function addToCart(productId, quantity = 1) {
+        try {
+            const response = await fetch(`${CART_API_URL}/add`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    product_id: productId,
+                    quantity: quantity
+                })
+            });
+            
+            const data = await response.json();
+            if (data.success) {
+                updateCartCount(data.cart_count);
+                showNotification('Item added to cart!');
+            }
+            return data;
+        } catch (error) {
+            console.error('Error adding to cart:', error);
+            return { success: false, message: 'Failed to add to cart' };
+        }
+    }
+
+    async function updateCartItem(productId, quantity) {
+        try {
+            const response = await fetch(`${CART_API_URL}/update`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    product_id: productId,
+                    quantity: quantity
+                })
+            });
+            
+            const data = await response.json();
+            if (data.success) {
+                updateCartCount(data.cart_count);
+            }
+            return data;
+        } catch (error) {
+            console.error('Error updating cart:', error);
+            return { success: false, message: 'Failed to update cart' };
+        }
+    }
+
+    async function checkout(customerInfo, cartItems) {
+        try {
+            const response = await fetch(`${CART_API_URL}/checkout`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    customer_info: customerInfo,
+                    cart_items: cartItems
+                })
+            });
+            
+            return await response.json();
+        } catch (error) {
+            console.error('Error during checkout:', error);
+            return { success: false, message: 'Checkout failed' };
+        }
+    }
+
+    // Cart synchronization functions
+    function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+        document.querySelector('.cart-count').textContent = totalItems;
+        document.querySelector('.cart-count').style.display = totalItems > 0 ? 'flex' : 'none';
+    }
+
+    // Cart functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize cart
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        // DOM elements
+        const cartIcon = document.querySelector('.cart-icon');
+        const cartCount = document.querySelector('.cart-count');
+        const cartDropdown = document.querySelector('.cart-dropdown');
+        const closeCart = document.querySelector('.close-cart');
+        const cartItemsContainer = document.querySelector('.cart-items');
+        const totalPriceElement = document.querySelector('.total-price');
+        const cartNotification = document.querySelector('.cart-notification');
+        const continueShoppingBtn = document.querySelector('.cart-actions .btn-outline');
+        const checkoutBtn = document.querySelector('.cart-actions .btn');
+        
+        // Update cart count
+        function updateCartCount() {
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            cartCount.style.display = totalItems > 0 ? 'flex' : 'none';
+        }
+        
+        // Update cart total
+        function updateCartTotal() {
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            totalPriceElement.textContent = `Rs ${total.toLocaleString()}`;
+        }
+        
+        // Render cart items
+        function renderCartItems() {
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="cart-empty">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>Your cart is empty</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            cartItemsContainer.innerHTML = '';
+            
+            cart.forEach(item => {
+                const cartItemElement = document.createElement('div');
+                cartItemElement.className = 'cart-item';
+                cartItemElement.innerHTML = `
+                    <div class="cart-item-img">
+                        <img src="${item.image}" alt="${item.name}">
+                    </div>
+                    <div class="cart-item-details">
+                        <h4 class="cart-item-title">${item.name}</h4>
+                        <div class="cart-item-price">Rs ${item.price.toLocaleString()}</div>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn minus" data-id="${item.id}">-</button>
+                            <span class="quantity">${item.quantity}</span>
+                            <button class="quantity-btn plus" data-id="${item.id}">+</button>
+                        </div>
+                        <div class="remove-item" data-id="${item.id}">Remove</div>
+                    </div>
+                `;
+                cartItemsContainer.appendChild(cartItemElement);
+            });
+            
+            // Add event listeners to quantity buttons
+            document.querySelectorAll('.quantity-btn.minus').forEach(btn => {
+                btn.addEventListener('click', decreaseQuantity);
+            });
+            
+            document.querySelectorAll('.quantity-btn.plus').forEach(btn => {
+                btn.addEventListener('click', increaseQuantity);
+            });
+            
+            document.querySelectorAll('.remove-item').forEach(btn => {
+                btn.addEventListener('click', removeItem);
+            });
+        }
+        
+        // Decrease quantity
+        function decreaseQuantity(e) {
+            const id = e.target.dataset.id;
+            const item = cart.find(item => item.id === id);
+            
+            if (item.quantity > 1) {
+                item.quantity -= 1;
+            } else {
+                cart = cart.filter(item => item.id !== id);
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            renderCartItems();
+            updateCartTotal();
+        }
+        
+        // Increase quantity
+        function increaseQuantity(e) {
+            const id = e.target.dataset.id;
+            const item = cart.find(item => item.id === id);
+            
+            item.quantity += 1;
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            renderCartItems();
+            updateCartTotal();
+        }
+        
+        // Remove item
+        function removeItem(e) {
+            const id = e.target.dataset.id;
+            cart = cart.filter(item => item.id !== id);
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            renderCartItems();
+            updateCartTotal();
+        }
+        
+        // Show notification
+        function showNotification(message) {
+            const notification = cartNotification.querySelector('span');
+            notification.textContent = message;
+            
+            cartNotification.classList.add('active');
+            
+            setTimeout(() => {
+                cartNotification.classList.remove('active');
+            }, 3000);
+        }
+        
+        // Toggle cart dropdown
+        cartIcon.addEventListener('click', () => {
+            cartDropdown.classList.add('active');
+        });
+        
+        closeCart.addEventListener('click', () => {
+            cartDropdown.classList.remove('active');
+        });
+        
+        continueShoppingBtn.addEventListener('click', () => {
+            cartDropdown.classList.remove('active');
+        });
+        
+        checkoutBtn.addEventListener('click', () => {
+            alert('Proceeding to checkout with ' + cart.reduce((total, item) => total + item.quantity, 0) + ' items');
+        });
+        
+        // Initialize cart UI
+        updateCartCount();
+        renderCartItems();
+        updateCartTotal();
+        
+        // Close cart when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!cartDropdown.contains(e.target) && !cartIcon.contains(e.target)) {
+                cartDropdown.classList.remove('active');
+            }
+        });
+        
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const nav = document.querySelector('.secondary-nav');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 120,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (window.innerWidth <= 768) {
+                        document.querySelector('.secondary-nav').style.display = 'none';
+                    }
+                }
+            });
+        });
+
+        // Category nav highlighting when scrolling
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.products');
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            document.querySelectorAll('.category-nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Back to Top Button visibility
+            if (window.pageYOffset > 500) {
+                document.querySelector('.back-to-top').classList.add('active');
+            } else {
+                document.querySelector('.back-to-top').classList.remove('active');
+            }
+
+            // Hide header on scroll down
+            const header = document.querySelector('header');
+            if (window.pageYOffset > 200) {
+                header.classList.add('hide');
+            } else {
+                header.classList.remove('hide');
+            }
+        });
+
+        // Show header when scrolling up
+        let lastScroll = 0;
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset;
+            const header = document.querySelector('header');
+            
+            if (currentScroll <= 0) {
+                header.classList.remove('hide');
+                return;
+            }
+            
+            if (currentScroll > lastScroll && !header.classList.contains('hide')) {
+                // Scroll down
+                header.classList.add('hide');
+            } else if (currentScroll < lastScroll && header.classList.contains('hide')) {
+                // Scroll up
+                header.classList.remove('hide');
+            }
+            lastScroll = currentScroll;
+        });
+
+        // Back to Top Button functionality
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.section-header, .category, .about-img, .about-text, .feature, .contact-info, .contact-form, .whatsapp-section, .footer-column, .footer-bottom');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            elements.forEach(element => {
+                observer.observe(element);
+            });
+        };
+
+        // Initialize animations when page loads
+        animateOnScroll();
+        
+        // Animate categories with staggered delays
+        const categories = document.querySelectorAll('.category');
+        categories.forEach((category, index) => {
+            category.style.animationDelay = `${index * 0.1}s`;
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+            }
+        });
+
+        // Hover effect for buttons
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px) scale(1.02)';
+                this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.2)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+            });
+        });
+
+        // Also update the cart count whenever the storage changes (from other tabs/pages)
+        window.addEventListener('storage', function(event) {
+            if (event.key === 'cart') {
+                updateCartCount();
+            }
+        });
+    });
+</script>
+<script src="cart.js"></script>
+</body>
+</html>
